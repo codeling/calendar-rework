@@ -90,3 +90,52 @@
   -ms-transition: 0.05s ease-out 0.05s;
   transition: 0.05s ease-out 0.05s;
 }
+
+#importview {
+    max-width: 500px;
+    overflow: scroll;
+    max-height:300px;
+    top: 20%;
+    left: 275px;
+    background: #fff;
+    padding: 30px 10px;
+    box-shadow: 0 0 5px #ccc;
+}
+
+#importview:after, #importview:before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+#importview:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-right-color: #333333;
+	border-width: 18px;
+	margin-top: -15px;
+}
+#importview:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-right-color: #ffffff;
+	border-width: 15px;
+	margin-top: -15px;
+}
+
+#importview .table tr:hover {
+  background: transparent;
+}
+
+#importview table tr td.name {
+  max-width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+#importview .table td {
+  padding:5px;
+}

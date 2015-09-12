@@ -37,14 +37,28 @@ app.controller('SettingsController', ['$scope', '$rootScope', 'Restangular', 'Ca
 
 		var reader = new FileReader();
 
-		$('#import').on('change', function () {
+		angular.element('#import').on('change', function () {
 			$scope.calendarAdded(this);
 		});
 
+		angular.element('#importview').hide();
+
 		$scope.calendarAdded = function (elem) {
 			$scope.files = elem.files;
+			angular.element('#importview').show();
+			angular.element('#importview').css('position', 'absolute');
 			$scope.$apply();
-			DialogModel.initsmall('#importmodel');
+			$scope.popover();
+		};
+
+		$scope.popover = function () {
+			console.log('pussy');
+		};
+
+		$scope.dynamicPopover = {
+			content: 'Hello, World!',
+    templateUrl: 'myPopoverTemplate.html',
+    title: 'Title'
 		};
 
 		$scope.importcalendar = function (id) {
@@ -74,7 +88,7 @@ app.controller('SettingsController', ['$scope', '$rootScope', 'Restangular', 'Ca
 		};
 
 		$scope.removecalendar = function (index) {
-			$scope.files.splice(index,1);
+			console.log($scope.files);
 		};
 
 		//to send a patch to add a hidden event again

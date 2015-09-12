@@ -49,7 +49,7 @@
 			</li>
 
 			<li class="settings-fieldset-interior-item settings-fieldset-interior-upload">
-				<input type="file" name="file" accept="text/calendar" multiple id="import" />
+				<input type="file" name="file" accept="text/calendar" multiple id="import" popover-template="dynamicPopover.templateUrl" popover-title="{{dynamicPopover.title}}"/>
 				<span href="#" class="settings-upload svg icon-upload"><?php p($l->t('Import calendar')); ?></span>
 				<span ng-show="!files.length" class="hide"><?php p($l->t('No Calendars selected for import')); ?></span>
 			</li>
@@ -65,9 +65,7 @@
 		</ul>
 	</fieldset>
 
-
-
-	<div id="importdialog" class="dialog">
+	<div id="importview">
 		<table class="table">
 			<tbody>
 				<tr ng-repeat="file in files">
